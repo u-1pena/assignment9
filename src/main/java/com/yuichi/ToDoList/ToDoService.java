@@ -14,7 +14,11 @@ public class ToDoService {
 
     public ToDo findToDo(int id) {
         Optional<ToDo> todo = this.toDoMapper.findById(id);
-        return todo.get();
+        if (todo.isPresent()) {
+            return todo.get();
+        } else {
+            throw new ToDoNotFoundException("指定したTASKはありません");
+        }
 
 
     }
