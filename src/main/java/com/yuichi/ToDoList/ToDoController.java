@@ -26,9 +26,9 @@ public class ToDoController {
         return toDoService.findToDo(id);
     }
 
-    @ExceptionHandler(value = ToDoNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleToDoNotException(
-            ToDoNotFoundException e, HttpServletRequest request) {
+    @ExceptionHandler(value = NoToDoFoundException.class)
+    public ResponseEntity<Map<String, String>> handleNoToDoException(
+            NoToDoFoundException e, HttpServletRequest request) {
 
         Map<String, String> body = Map.of(
                 "timestamp", ZonedDateTime.now().toString(),

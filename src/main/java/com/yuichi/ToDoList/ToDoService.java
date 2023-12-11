@@ -17,10 +17,8 @@ public class ToDoService {
         if (todo.isPresent()) {
             return todo.get();
         } else {
-            throw new ToDoNotFoundException("指定したTASKはありません");
+            throw new NoToDoFoundException("指定したToDoはありません");
         }
-
-
     }
 
 }
